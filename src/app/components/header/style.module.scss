@@ -1,0 +1,97 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    >h1 {
+        background: linear-gradient(215.37deg, rgb(255, 100, 50), rgb(255, 162, 40));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-size: 34.06px;
+        font-weight: 800;
+        line-height: 109.5%;
+        letter-spacing: 0%;
+        text-align: left;
+    }
+
+    .headerarray {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        gap: 80px;
+
+        >p {
+            color: rgb(163, 163, 163);
+            font-size: 17.88px;
+            font-weight: 400;
+            line-height: 109.5%;
+            letter-spacing: 0%;
+            text-align: left;
+            cursor: pointer;
+
+            &.selectedpoint {
+                background: linear-gradient(215.37deg, rgb(255, 100, 50), rgb(255, 162, 40));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                position: relative;
+
+                &::after {
+                    animation: listpoint .3s ease-in-out forwards;
+                    content: '';
+                    position: absolute;
+                    left: calc(50% - 3px);
+                    border-radius: 100%;
+
+                    top: 140%;
+                    height: 6px;
+                    width: 6px;
+                    background: linear-gradient(215.37deg, rgb(255, 100, 50) 5.76%, rgb(255, 162, 40) 93.685%);
+                }
+            }
+        }
+    }
+
+    >span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 26px;
+
+        >button {
+            height: 50px;
+
+            font-size: 17.74px;
+            font-weight: 500;
+            background: linear-gradient(215.37deg, rgb(255, 93, 41) 12.799%, rgb(254, 156, 28) 85.97%);
+
+            &:first-of-type {
+                padding: 11px 56px;
+                border-radius: 700px 675px 700px 700px;
+            }
+
+            &:nth-of-type(2) {
+                border-radius: 100%;
+                padding: 10px;
+                width: 50px;
+            }
+        }
+    }
+}
+
+@keyframes listpoint {
+    from {
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}
