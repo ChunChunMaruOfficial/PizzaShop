@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import styles from './style.module.scss'
-import bag from '../../../source/bag.svg'
+import bag from '../../../source/svg/bag.svg'
 import Image from "next/image";
 
 

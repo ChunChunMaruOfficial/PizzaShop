@@ -1,0 +1,111 @@
+.parent {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 50%;
+
+        >h1 {
+            color: rgb(255, 255, 255);
+            font-size: 69.17px;
+            font-weight: 800;
+            line-height: 109.5%;
+        }
+
+        >p {
+            width: 65%;
+            margin-block: 25px;
+            font-size: 19.56px;
+            font-weight: 400;
+            line-height: 32px;
+            letter-spacing: 0%;
+            color: rgb(163, 163, 163);
+
+            >span {
+                color: rgb(255, 255, 255);
+            }
+        }
+
+        >.Cookingprocess {
+            width: 100%;
+            color: rgb(163, 163, 163);
+            font-size: 19.56px;
+            font-weight: 400;
+            line-height: 136%;
+
+            >img {
+                margin-top: 12px;
+                object-fit: contain;
+                border-radius: 23px;
+                box-shadow: 0px 4px 29px 0px rgba(255, 78, 21, 0.2);
+            }
+        }
+
+        >.slide {
+            position: relative;
+            height: 62px;
+            width: 350px;
+
+            .backgroundslider {
+                background: rgb(255, 94, 42);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 100px;
+                z-index: 1;
+
+                .middleslider {
+                    background: #1d0900;
+                    position: absolute;
+                    width: calc(100% - 4px);
+                    height: calc(100% - 4px);
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 100px;
+                    z-index: 2;
+
+                    .activeslider {
+                        background: rgb(255, 94, 42);
+                        height: 100%;
+                        width: 48%;
+                        border-radius: 100px;
+                        z-index: 3;
+                    }
+
+                    >span {
+                        position: absolute;
+                        width: 100%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        z-index: 4;
+                        >h3 {
+                            color: rgb(255, 255, 255);
+                            font-size: 22.44px;
+                            font-weight: 500;
+                            line-height: 123.5%;
+
+                            &.selected {
+                                background: linear-gradient(215.37deg, rgb(255, 100, 50), rgb(255, 162, 40));
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                background-clip: text;
+                                text-fill-color: transparent;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
