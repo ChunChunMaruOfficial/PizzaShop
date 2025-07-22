@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: space-between;
     width: 100%;
 
     .left {
@@ -48,6 +49,7 @@
         }
 
         >.slide {
+            margin-top: 59px;
             position: relative;
             height: 62px;
             width: 350px;
@@ -72,11 +74,21 @@
                     z-index: 2;
 
                     .activeslider {
+                        position: absolute;
+                        left: 0;
                         background: rgb(255, 94, 42);
                         height: 100%;
                         width: 48%;
                         border-radius: 100px;
                         z-index: 3;
+
+                        &.toorder {
+                            animation: toorder .3s ease-in-out forwards;
+                        }
+
+                        &.menu {
+                            animation: menu .3s ease-in-out forwards;
+                        }
                     }
 
                     >span {
@@ -88,7 +100,9 @@
                         flex-direction: row;
                         justify-content: space-around;
                         z-index: 4;
+
                         >h3 {
+                            cursor: pointer;
                             color: rgb(255, 255, 255);
                             font-size: 22.44px;
                             font-weight: 500;
@@ -107,5 +121,89 @@
                 }
             }
         }
+    }
+
+    .right {
+        transform: translateY(-8%);
+        position: relative;
+
+        .bigpizza {
+            border-radius: 50px;
+        }
+
+        .fried {
+            position: absolute;
+            rotate: -15.28deg;
+            bottom: -112px;
+            left: -152px;
+        }
+
+        .minipizzo {
+            rotate: 4.20deg;
+            position: absolute;
+            left: 316px;
+            top: -127px;
+        }
+    }
+
+
+    .bgpizza {
+        position: absolute;
+        z-index: -1;
+        color: rgb(0, 0, 0);
+        font-family: Alex Brush;
+        font-size: 209.87px;
+        font-weight: 400;
+        line-height: 109.5%;
+        letter-spacing: 0%;
+        text-align: left;
+
+        text-shadow:
+            -.5px -.5px 0 #331905,
+            .5px -.5px 0 #331905,
+            -.5px .5px 0 #331905,
+            .5px .5px 0 #331905;
+
+        &:nth-of-type(1) {
+            left: 189px;
+            top: 130px;
+        }
+
+        &:nth-of-type(2) {
+            left: 716px;
+            top: 687px;
+        }
+
+        &:nth-of-type(3) {
+            left: 1024px;
+            top: 35px;
+        }
+    }
+
+
+}
+
+@keyframes toorder {
+    from {
+        transform: translateX(72.5%);
+        width: 58%;
+    }
+
+    to {
+
+        width: 48%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes menu {
+    from {
+        width: 48%;
+        transform: translateX(0);
+    }
+
+    to {
+        width: 58%;
+        transform: translateX(72.5%);
     }
 }
